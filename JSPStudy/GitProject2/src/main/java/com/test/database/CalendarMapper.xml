@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.database.CalendarMapper">
+	<!-- 일정 추가 -->
+	<insert id="insertCalendarEvent"
+		parameterType="com.test.model.CalendarEventVO"> INSERT INTO tb_calendar (mem_id, title, start, end,
+		backgroundColor) VALUES (#{mem_id}, #{title}, #{start}, #{end},
+		#{backgroundColor}) </insert>
+	<!-- 일정 가져오기 -->
+	<select id="fetchCalendarEvent"
+		parameterType="com.test.model.CalendarEventVO"
+		resultType="com.test.model.CalendarEventVO"> SELECT * FROM tb_calendar where mem_id = #{mem_id}
+	</select>
+	<!-- 일정 수정하기 -->
+	<update id="updateCalendarEvent"
+		parameterType="com.test.model.CalendarEventVO"> update tb_calendar set title = #{title}, start =
+		#{start}, end = #{end}, backgroundColor = #{backgroundColor} where
+		cal_idx = #{cal_idx} </update>
+	<!-- 일정 삭제하기 -->
+	<delete id="deleteCalendarEvent"> delete from tb_calendar where cal_idx = #{cal_idx}
+	</delete>
+</mapper>
+
+

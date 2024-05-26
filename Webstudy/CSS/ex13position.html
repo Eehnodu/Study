@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+
+            position 속성
+            : 요소의 위치를 자유자재로 배치해보자!
+            1) static "기본값"
+            > 요소를 순서대로 배치
+            2) relative
+            > static값 원래 위치를 기준으로
+              상하좌우를 자유롭게 이동
+            3) absolute
+            > static 속성을 가지고 있지 않은 부모요소를 기준으로
+              상하좌우를 자유롭게 이동
+            > 부모 요소가 없다면 body 태그를 기준으로 움직인다.
+            4) fixed
+            > 고정적인 위치 / 부모요소의 영향을 받지 않는다.
+        */
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        #red {
+            background-color: red;
+        }
+
+        #green {
+            background-color: green;
+            position: relative;
+            /* 기분점 : 기준점으로 부터 얼만큼 떨어지게 만들건지 작성 */
+            left: 100px;
+            /* 
+                z-index
+                요소의 쌓이는 순서를 지정
+                - 높은 숫자 : 앞쪽에 배치
+                - 낮은 숫자 : 뒷쪽에 배치
+            */
+            z-index: 999;
+        }
+
+        #blue {
+            background-color: blue;
+            position: relative;
+            left: 50px;
+            bottom: 50px;
+        }
+
+        #gray {
+            background-color: gray;
+            position: fixed;
+            right: 0px;
+            bottom: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="red"></div>
+    <div id="green"></div>
+    <div id="blue"></div>
+    <div id="gray"></div>
+</body>
+
+</html>

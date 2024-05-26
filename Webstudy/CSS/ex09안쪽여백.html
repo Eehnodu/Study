@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        /* 
+            padding
+            : 테두리와 contents를 기준으로 안쪽여백을 의미함.
+            >> HTML, 요소(태그들)의 크기에 영향을 미침.
+            ** 함께 사용하면 좋은 속성 **
+            box-sizing
+            : 박스 요소를 화면에 표시하는 방식 지정
+            - content-box(기본값)
+            : 너비와 높이가 content영역 표시하는 것
+            - border-box
+            : 너비와 높이를 padding값 포함해서 설정
+        */
+
+        #red {
+            background-color: red;
+            padding: 10px;
+            box-sizing: border-box;
+            color: white;
+        }
+
+        #blue {
+            background-color: blue;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="red">글자글자글자글자글자글자글자글자글자</div>
+    <div id="blue"></div>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	https://www.springframework.org/schema/beans/spring-beans.xsd
+	http://mybatis.org/schema/mybatis-spring 
+    http://mybatis.org/schema/mybatis-spring-1.2.xsd"
+	>
+	
+	<!-- DB 환경설정을 하는 파일 -->
+	<!-- 1. HikariCP 안쪽에 있는 객체를 생성 == Connection -->
+	<!-- HikariConfig : HikariCP 환경설정을 위한 객체 -->
+	<!-- bean은 객체 생성하는 또 다른 문법
+		 HikariConfig hikariConfig = new HikariConfig();
+		 hikariConfig.setXXXX("root");
+		 hikariConfig.setXXXX("12345");
+		 hikariConfig.setXXXX("~~~~");
+		 hikariConfig.setXXXX("~~~~");
+	-->	
+	<bean class="com.zaxxer.hikari.HikariConfig" id="hikariConfig">
+		<property name="username" value="root"/>	
+		<property name="password" value="12345"/>
+		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/bigdata"/>
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>	
+	 </bean>
+	 
+	 <!-- 2. HikariDataSource
+	 	  : 위쪽에 있는 config 값을 기준으로 DBCP 생성 -->
+	 <!-- HikariDataSource dataSource = new HikariDataSource(hikariConfig) -->
+	 <bean class="com.zaxxer.hikari.HikariDataSource" id="dataSource"> 
+	 	<constructor-arg ref="hikariConfig">
+	 	</constructor-arg>
+	 </bean>
+	 
+	 <!-- 3. SqlSessionFactroyBean 생성
+	 	  : session 빌려오고, 사용하고, 반납하는 역할을 spring이 다 해줌
+	 	  : mybatis-spring library 안쪽에 존재
+	 -->
+	 <bean class="org.mybatis.spring.SqlSessionFactoryBean">
+	 	<property name="dataSource" ref="dataSource"/>
+	 </bean>
+	 
+	 <!-- 4. SqlSessionFactoryBean이 Mapper 인터페이스를 구현해야한다.
+	 	  : Mapper파일의 위치가 어디에 있는지 알려줘야한다.
+	 	  : Mapper파일은 테이블 단위로 만들어서 여러개가 될 수 있기 때문에
+	 	  : package 자체를 스캔하게 한다.
+	 -->
+	 <mybatis-spring:scan base-package="com.smhrd.db"/>
+	 
+</beans>

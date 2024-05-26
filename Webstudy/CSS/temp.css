@@ -1,0 +1,23 @@
+@import url(temp.css);
+/* @import url(가져오고 싶은 css파일 링크) */
+
+/* 
+    @media query
+    > 반응형 웹 만들때 많이 사용
+    @keyframe
+    > animation 공부해오고 싶을 때 많이 사용
+    transition 속성
+    > js할 때 예쁜 기능을 많이 만들어볼 수 있음
+*/
+
+div {
+    width: 100px;
+     height: 100px;
+    background-color: aquamarine;
+}
+
+#temp {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}

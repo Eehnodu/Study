@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="txt">텍스트</h1>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        // 제이쿼리는 라이브러리
+        // 사용하기 위해서 임포트 작업을 진행 -> 파이썬 라이브러리
+        // 1. 외부방식(파일을 불러드리는 것) -> 로컬 개발 때 사용
+        // 2. 외부방식(CND를 통해서 블러드리는 것) -> 코드를 배포할 때
+
+        // document.getElementById('txt').innerHTML
+        // document.getElementById('txt').innerHTML ="수정"
+        $('#txt').html()
+        $('#txt').html('<h2>수정</h2>')
+
+        document.getElementById('txt').style.color = 'red';
+        $('#txt').css('color', 'red');
+
+        // 스타일 복수 변경
+        // 복수개를 넣을 때는 객체 형태의 매개변수로 전달 한다.
+        document.getElementById('txt').style.cssText = 'color : red; background-color=yellow'
+        $('#txt').css({
+            color: "red",
+            backgroundColor: "yellow"
+        })
+
+
+    </script>
+</body>
+
+</html>

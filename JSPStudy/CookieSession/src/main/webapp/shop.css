@@ -1,0 +1,33 @@
+div {
+	margin: 0px auto;
+	align: center;
+	text-align: center;
+	color: #161616;
+}
+
+input[type="checkbox"] {
+	width: 20px;
+	height: 20px;
+}
+
+table {
+	margin: 0px auto;
+	align: center;
+	text-align: center;
+}
+
+img {
+	align: center;
+	width: 250px;
+	height: 200px;
+}
+
+#list {
+	width: 200px;
+	height: 400px;
+	background-color: yellowgreen;
+	text-align: center;
+	position: fixed;
+	right: 0px;
+	top: 300px;
+}

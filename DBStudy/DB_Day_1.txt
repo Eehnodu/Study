@@ -1,0 +1,36 @@
+DBMS 종류를 3개 이상 작성하시오.
+1. MySQL
+2. MongoDB - NoSQL - [ {Key : Value, Key : Value, Key : Value} ]
+PostgreSQL
+Oracle Database
+Microsoft SQL Server
+SQLite
+DB2
+MariaDB
+
+CRUD의 전체 영어:
+Create, Read, Update, Delete
+
+MySQL Server의 port 번호:
+MySQL : 3306, Oracle : 1521
+
+RDBMS에서 데이터를 저장하는 표 형식의 스키마를 무엇이라고 하는가:
+테이블
+
+테이블을 설계할 때 레코드의 중복을 방지하기 위해서 반드시 만들어야 되는 키를 무엇이라고 하는가:
+기본 키 (Primary Key) (PK)
+
+데이터베이스의 구조를 무엇이라고 하는가:
+데이터베이스 스키마
+
+관계형 데이터베이스에서 테이블(table)의 또 다른 이름 두 가지:
+관계 (Relation), Entity
+
+DBMS에 저장된 데이터를 CRUD하기 위해서 사용하는 구조화 질의 언어를 무엇이라고 하는가:
+SQL (Structured Query Language)
+
+요구사항을 분석한 후 개념적 모델링에서 시각화 도구를 무엇이라고 하는가:
+ER 다이어그램 (Entity-Relationship Diagram) (ERD)
+
+localhost와 같은 의미의 IP 주소:
+127.0.0.1 = loop back ip

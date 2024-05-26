@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.test.model.MemberVO" alias="mvo" />
+		<typeAlias type="com.test.model.AccExerciseVO" alias="aevo" />
+		<typeAlias type="com.test.model.ExerciseVO" alias="evo" />
+		<typeAlias type="com.test.model.AccChangeVO" alias="chvo" />
+		<typeAlias type="com.test.model.StdDataVO" alias="stdvo" />
+		<typeAlias type="com.test.model.CalendarEventVO" alias="cevo"/>
+		<typeAlias type="com.test.model.SentenceVO" alias="stvo"/>
+		<typeAlias type="com.test.model.MonthImgVO" alias="mivo"/>
+	</typeAliases>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.cj.jdbc.Driver" />
+				<property name="url"
+					value="jdbc:mysql://project-db-campus.smhrd.com:3307/cgi_23k_big23_p2_3?useSSL=false" />
+				<property name="username" value="cgi_23k_big23_p2_3" />
+				<property name="password" value="smhrd3" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="com/test/database/MemberMapper.xml" />
+		<mapper resource="com/test/database/AccExerciseMapper.xml" />
+		<mapper resource="com/test/database/ExerciseMapper.xml" />
+		<mapper resource="com/test/database/AccChangeMapper.xml" />
+		<mapper resource="com/test/database/StdMapper.xml" />
+		<mapper resource="com/test/database/CalendarMapper.xml"/>
+		<mapper resource="com/test/database/SentenceMapper.xml"/>
+		<mapper resource="com/test/database/MonthImgMapper.xml"/>
+		<mapper resource="com/test/database/RsvInfoMapper.xml"/>
+		<mapper resource="com/test/database/FitnessCenterMapper.xml"/>
+		<mapper resource="com/test/database/VoucherMapper.xml"/>
+		<mapper resource="com/test/database/PurchaseMapper.xml"/>
+		<mapper resource="com/test/database/PtTimeMapper.xml"/>
+		<mapper resource="com/test/database/RsvCommitMapper.xml"/>
+	</mappers>
+</configuration>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 입력태그를 사용할 때는
+        반드시 form태그로 감싸주기! -->
+    <!-- action : 입력한 데이터를 어디로 넘겨줄 건지 -->
+    <form action="#">
+        <!-- 1. input type = "text" : 글자 입력 -->
+        <input value="Example12" placeholder="아이디를 입력하세요" autofocus type="text" maxlength="10"><br>
+        <!-- 2. input type = "password" : 비밀번호 입력 -->
+        <input type="password"><br>
+        <!-- 3. input type = "button" : 버튼 모양 -->
+        <input type="button" value="로그인"><br>
+        <!-- 4. input type = "checkbox" : 체크 박스 형식
+                **실제 데이터를 포함시키고 싶다면,
+                value속성 지정 필수 **
+        -->
+        영화보기 <input type="checkbox" value="영화보기"><br>
+        <!-- 5. input type = "radio" : 라디오 버튼
+                ** 중복으로 선택 불가능한 경우 사용 **
+                >> name값을 동일하게 줌으로써 하나만 선택
+                   하게끔 설계 가능    
+            -->
+        영화1<input type="radio" name="영화" value="영화1">
+        영화2<input type="radio" name="영화" value="영화2">
+        영화3<input type="radio" name="영화" value="영화3"><br>
+        <!-- 6. 그 외 종류들 -->
+        <input type="color" name="" id="">
+        <input type="date" name="" id=""><br>
+        <input type="number" name="" id=""><br>
+        <input type="reset" value="초기화"><br>
+        <!-- 7. select 태그 : 형제태그 -->
+        <select>
+            <option value="">Java</option>
+            <option value="">Python</option>
+            <option value="">C++</option>
+        </select>
+    </form>
+</body>
+
+</html>

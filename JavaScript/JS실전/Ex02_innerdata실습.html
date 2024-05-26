@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>버튼을 통해서 내용을 입력하세요</h1>
+    <div id="area">
+    </div>
+    <button id="btn1">h1태그 생성</button>
+    <button id="btn2">a태그 생성</button>
+    <button id="btn3">ul태그 생성</button>
+
+
+    <script>
+        function add_h1() {
+            document.getElementById("area").innerHTML += "<h1>DOM 활용하기</h1>"
+        }
+        function add_a() {
+            document.getElementById("area").innerHTML += "<a href='https://www.google.co.kr/'>Google로 이동</a>"
+        }
+        function add_ul() {
+            let text = `<ul>
+                        <li>HTML
+                        <li>CSS
+                        <li>JS
+                    </ul>`
+            document.getElementById("area").innerHTML += text
+        }
+        document.getElementById("btn1").addEventListener("click", add_h1)
+        document.getElementById("btn2").addEventListener("click", add_a)
+        document.getElementById("btn3").addEventListener("click", add_ul)
+    </script>
+</body>
+
+</html>

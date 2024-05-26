@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ex03_Js2.js"></script>
+</head>
+
+<body>
+    <span>Like! ♥</span>
+    <span id="txt">0</span><br>
+    <button id="plu">+1증가</button>
+    <button id="min">-1감소</button>
+    <script>
+        let num = Number(document.getElementById("txt").innerHTML)
+        document.getElementById("plu").addEventListener("click", plus)
+        document.getElementById("min").addEventListener("click", minus)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 형변환
+        // 1. 문자를 정수와 실수로 각각 변환
+        // parseInt -> 문자를 정수로 변환
+        // parseFloat -> 문자를 실수로 변환
+        // 하지만 타입은 둘다 NUmber형태
+        // Number -> 문자을 정수, 실수 알아서 각각 변환
+        let textInt = "3";
+        let textFloat = "3.14";
+        console.log(textInt, typeof (textInt));
+        console.log(parseInt(textInt), typeof (parseInt(textInt)));
+        console.log(textFloat, typeof (textFloat));
+        console.log(parseFloat(textFloat), typeof (parseFloat(textFloat)));
+        console.log(parseInt(textFloat), typeof (parseInt(textFloat)));
+        console.log(Number(textInt));
+        console.log(Number(textFloat));
+
+        // 2, 숫자를 문자로 만드는 경우;
+        let number = 10;
+        console.log(String(number));
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.db.BoardMapper">
+<!-- 
+	jsp/servlet할 때 사용했던 mybatis에서의 namespace
+	: 단순한 식별자 의미만 가지고 있었음! 중복만 안나게 설정하면 됐음!
+	
+	Spring에서 사용하는 mybatis에서의 namespace
+	: 식별자 + Spring이 sql 구문을 찾을 수 있게 도와주는 경로
+	: 반드시!!! 인터페이스의 이름과 동일하게 작성!
+ -->
+ 
+ 	<!-- Spring에서는 반드시 BoardMapper 인터페이스 안쪽에 있는
+ 		 실행해야하는 메소명과 BoardMapper.xml 파일의 id 값이 일치해야 한다!!
+ 	 -->
+	<select id="boardList" resultType="com.smhrd.model.BoardVO">
+		SELECT *
+		FROM BOARD
+		ORDER BY idx DESC
+	</select>
+	
+	<!-- 글을 작성하는 sql문 -->
+	<insert id="register" parameterType="com.smhrd.model.BoardVO">
+		INSERT INTO BOARD(TITLE, WRITER, CONTENT) VALUES (#{title}, #{writer}, #{content})
+	</insert>
+
+	<!-- 글을 조회하는 sql문 -->
+	<select id="search" parameterType="com.smhrd.model.SearchCriteria" resultType="com.smhrd.model.BoardVO">
+		SELECT *
+		FROM BOARD
+		<include refid="searchOption"/>
+		ORDER BY indate DESC
+	</select>
+
+	<sql id="searchOption">
+		<if test="type == 'writer'">
+			WHERE WRITER LIKE CONCAT('%', #{text}, '%')
+		</if>
+		<if test="type == 'title'">
+			WHERE TITLE LIKE CONCAT('%', #{text}, '%')
+		</if>
+	</sql>
+
+	<!-- 자동완성 메소드 -->
+	<select id="autocomplete" parameterType="com.smhrd.model.SearchCriteria" resultType="com.smhrd.model.BoardVO">
+		<include refid="autoSearch"/>
+		FROM BOARD
+	</select>
+	
+	<sql id="autoSearch">
+		<if test="type == 'writer'">
+			SELECT DISTINCT(writer)
+		</if>
+		<if test="type == 'title'">
+			SELECT DISTINCT(title)
+		</if>
+	</sql>
+
+</mapper>

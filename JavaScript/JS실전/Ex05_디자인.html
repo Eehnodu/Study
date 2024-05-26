@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span id="txt">퇴근</span><br>
+    <button id="btn">디자인변경</button>
+    <script>
+        function change() {
+            document.getElementById('txt').innerHTML = '<span id="txt">졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다졸리다</span>';
+            // css를 효율적으로 작성하는 방법
+            document.getElementById('txt').style.cssText = 'color: red; font-size : 70px; font-weight : bold';
+        }
+        document.getElementById('btn').addEventListener('click', change)
+
+        // 직접 스타일을 제어하는 경우에는 인라인 방식으로 스타일이 작성
+        // - 보안취약, 유지보수가 힘들다 -> 단순한 스타일 제어 할때만 사용
+    </script>
+</body>
+
+</html>

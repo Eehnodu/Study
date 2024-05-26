@@ -1,0 +1,321 @@
+@charset "UTF-8";
+body,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+}
+
+/* 상단바 */
+.menu {
+    width: calc(100% - 600px);
+    /* 부모 요소인 nav의 너비를 조정하여 왼쪽과 오른쪽 공간 확보 */
+    margin-left: 270px;
+    /* 왼쪽 마진을 추가하여 왼쪽 공간 확보 */
+    margin-right: 50px;
+    /* 오른쪽 마진을 추가하여 오른쪽 공간 확보 */
+    position: relative;
+    /* 상대적 위치 지정 */
+    z-index: 1;
+    /* 다른 요소들 위에 표시되도록 z-index 값 설정 */
+}
+
+.menu * {
+    display: inline;
+}
+
+.menu li {
+    margin: 10px;
+}
+
+.menu li a {
+    color: rgb(24, 10, 10);
+    text-decoration: none;
+}
+
+.menu ul {
+    padding-left: 0px;
+}
+
+.menu {
+    font-size: 20px;
+    font-style: italic;
+    align-items: center;
+    text-align: center;
+    padding-top: 3%;
+    position: fixed;
+    /*상단바 이동동하게 하는 정의*/
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+}
+
+.headerfitImg {
+    /*왼쪽 이미지 정의*/
+    width: 250px;
+    /* 이미지의 폭 지정 */
+    height: auto;
+    /* 이미지 높이 자동 조정 */
+    float: left;
+    /* 오른쪽으로 정렬 */
+}
+
+.headerImg {
+    /*오른쪽 이미지 정의*/
+    width: 213px;
+    /* 이미지의 폭 지정 */
+    height: auto;
+    /* 이미지 높이 자동 조정 */
+    float: right;
+    /* 오른쪽으로 정렬 */
+    margin-left: 30px;
+    /* 이미지 사이의 간격을 조정합니다. */
+}
+
+
+/*각 페이지 내부 입력 공간*/
+.shape {
+    position: absolute;
+    /* tel 요소를 절대 위치로 설정 */
+    top: 15%;
+    /* 화면 상단여백 */
+    left: 13%;
+    /* 왼쪽 여백  */
+    right: 13%;
+    /* 오른쪽 여백 */
+    bottom: 0;
+    /* 하단 여백*/
+    background-color: #f8f9fb;
+    /* 배경 색상 및 투명도 설정 */
+    padding: 10px;
+    /* 내부 여백 설정 */
+}
+
+
+/*page1*/
+.home {
+    background: #f8f9fb;
+    background: #f8f9fb;
+    position: relative;
+}
+
+.home1Img img {
+    width: 46%;
+    /* 이미지크기 지정 */
+    height: auto;
+    /* 가로 너비에 맞게 높이를 자동으로 조절 */
+    max-width: 100%;
+    /* 이미지가 부모 요소의 크기를 넘어갈 수 있도록 제한을 없앰 */
+    position: absolute;
+    /* 이미지를 절대 위치로 설정 */
+    top: 30px;
+    /* 상단 여백 */
+    left: 30px;
+    /* 왼쪽 여백 */
+    z-index: 2; /* 다른 이미지 위에 표시되도록 순서 조절 */
+}
+
+.home2Img img {
+    width: 60%;
+    /* 이미지크기 지정 */
+    height: auto;
+    /* 가로 너비에 맞게 높이를 자동으로 조절 */
+    max-width: 100%;
+    /* 이미지가 부모 요소의 크기를 넘어갈 수 있도록 제한을 없앰 */
+    position: absolute;
+    /* 이미지를 절대 위치로 설정 */
+    bottom: 10px;
+    /* 상단 여백 */
+    right: 10px;
+    /* 왼쪽 여백 */
+    
+}
+
+.hometest {
+    position: absolute;
+    /* 문장을 절대 위치로 설정하여 이미지 내에 위치시킴 */
+    top: 35%;
+    /* 하단 여백을 0으로 설정하여 이미지 하단에 배치 */
+    left: 50px;
+    /* 왼쪽 여백을 50%로 설정하여 가운데 정렬 */
+    max-width: 100%;
+    color: #333333;
+    font-size: 20px;
+}
+
+
+
+/*page2*/
+.panel1 {
+    background: #f8f9fb;
+    position: relative;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 70%;
+    margin-top: 10%;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/*page3*/
+.panel2 {
+    background: #f8f9fb;
+    background: #f8f9fb;
+    position: relative;
+}
+.panel21Img img {
+    width: 46%;
+    height: auto;
+    max-width: 100%;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 2; 
+}
+.panel22Img img {
+    width: 45%;
+    height: auto;
+    max-width: 100%;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+.panel2test {
+    position: absolute;
+    top: 32%;
+    left: 30px;
+    max-width: 100%;
+    color: #333333;
+}
+
+
+/*page4*/
+.panel3 {
+    background: #f8f9fb;
+    background: #f8f9fb;
+    position: relative;
+}
+.panel31Img img {
+    width: 35%;
+    height: auto;
+    max-width: 100%;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 2; 
+}
+
+.panel32Img img {
+    width: 100%;
+    height: 70%;
+    max-width: 100%;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    
+}
+.panel3test {
+    position: absolute;
+    top: 29%;
+    left: 30px;
+    max-width: 100%;
+    color: #333333;
+}
+
+
+/*page5*/
+.panel4 {
+    background: #f8f9fb;
+    background: #f8f9fb;
+    position: relative;
+}
+.panel41Img img {
+    width: 26%;
+    height: auto;
+    max-width: 100%;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    z-index: 2; 
+}
+.panel4test {
+    position: absolute;
+    bottom: 20%; /* 아래로부터의 거리를 조정합니다. */
+    left: 20px;
+    max-width: 100%;
+    color: #333333;
+}
+
+
+/*페이지 네이게이션*/
+.pagination {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+
+@media (max-width:1000px) {
+    .pagination {
+        top: auto;
+        right: auto;
+        left: 50%;
+        bottom: 0;
+        transform: translateY(0) translateX(-50%);
+    }
+
+    .pagination>li {
+        float: left;
+    }
+}
+
+.pagination a {
+    display: block;
+    color: black;
+    position: relative;
+    padding: 20px;
+}
+
+.pagination a.active:after {
+    box-shadow: inset 0 0 0 5px;
+}
+
+.pagination a .hover-text {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    padding-right: 15px;
+    white-space: nowrap;
+}
+
+.pagination a:hover .hover-text {
+    opacity: 1;
+}
+
+.pagination a:after {
+    content: "";
+    transition: box-shadow 0.5s ease;
+    width: 10px;
+    height: 10px;
+    display: block;
+    border: 1px solid;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: pink;
+        }
+
+        h1 {
+            color: magenta;
+        }
+
+        /* 
+            ul태그를 기준으로 봤을 때 안쪽에 있는 자식 li태그 선택
+        */
+
+        ul>li {
+            font-size: 20px;
+        }
+
+        ul>.lang {
+            color: red;
+        }
+
+        /* 
+            ul태그를 기준으로 봤을 때 자손선택자를 사용해서
+            java라는 글자를 노란색상으로 변경
+        */
+        ul a {
+            color: yellow;
+        }
+
+        ul li {
+            font-family: '굴림';
+        }
+
+        /*
+            id값이 db인 태그를 기준으로
+            근접형제 선택해서 글자 크기를 36px 변경
+         */
+
+        #db+li {
+            font-size: 36px;
+        }
+
+        /* 
+            id값이 db인 태그를 기준 형제(후행) 선택해서
+            폰트를 궁서 변경
+        */
+        #db~li {
+            font-family: '궁서';
+        }
+
+        p.lang {
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        계층 선택자
+        : 특정 태그의 위치를 기준으로 계층적 구조로 요소들 선택
+        1. 자손선택자 : 공백(ul li)
+        2. 자신선택자 : > (ul>li)
+        3. 인접형제 선택자(근접형제) : + (ul+li)
+        4. 형제(후행) 선택자 : ~ (ul~li)
+
+        그룹 선택자 : ,를 기준으로 여러개 태그를 선택할 때 사용
+        >> p,h1,h2,h3
+     -->
+    <h1>우리가 지금까지 배운 언어</h1>
+    <ul>
+        <li id='java'><a href="#">Java</a></li>
+        <li id='db'>Database</li>
+        <li class="lang">Python</li>
+        <li class="lang">Html</li>
+        <li class="lang">Python</li>
+    </ul>
+</body>
+
+</html>

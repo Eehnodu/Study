@@ -1,0 +1,48 @@
+h1 {
+  font-size: 35pt;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+h2 {
+  font-size: 35pt;
+  background-color: orange;
+  color: white;
+  text-align: center;
+}
+h3 {
+  font-size: 35pt;
+  background-color: yellow;
+  color: white;
+  text-align: center;
+}
+h4 {
+  font-size: 35pt;
+  background-color: green;
+  color: white;
+  text-align: center;
+}
+h5 {
+  font-size: 35pt;
+  background-color: blue;
+  color: white;
+  text-align: center;
+}
+h6 {
+  font-size: 35pt;
+  background-color: navy;
+  color: white;
+  text-align: center;
+}
+p {
+  font-size: 35pt;
+  background-color: blueviolet;
+  color: white;
+  text-align: center;
+}
+body {
+  background-color: lightgoldenrodyellow;
+  background-image: url("cloud.jfif");
+  background-size: cover;
+  background-position: center;
+}

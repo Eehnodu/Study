@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.database.DAO">
+
+	<!-- 회원 가입 -->
+	<insert id="mem_join" parameterType="com.test.model.MemberVO">
+		insert into
+		tb_member(mem_id, mem_pw, mem_name, mem_phone, mem_birthdate,
+		mem_addr, mem_email, mem_nick, mem_gender, height, weight) values
+		(#{mem_id},#{mem_pw},#{mem_name},#{mem_phone}, #{mem_birthdate},
+		#{mem_addr}, #{mem_email}, #{mem_nick}, #{mem_gender}, #{height},
+		#{weight})
+	</insert>
+	
+	<!-- 회원 로그인 -->
+	<select id="mem_login" parameterType="com.test.model.MemberVO"
+		resultType="com.test.model.MemberVO">
+		select mem_id, mem_pw, mem_name, mem_gender, mem_phone, mem_birthdate, mem_addr, mem_email, mem_nick, height, weight, mem_img from tb_member
+		where mem_id = #{mem_id} and mem_pw = #{mem_pw}
+	</select>
+	
+	<!-- salt값 저장 -->
+    <insert id="salt_join" parameterType="com.test.model.SaltVO">
+    	insert into tb_salt(mem_id, mem_salt)
+    	values (#{mem_id}, #{mem_salt})
+    </insert>
+    
+	<!-- salt값 확인 -->
+    <select id="salt_login" parameterType="com.test.model.SaltVO" resultType="com.test.model.SaltVO">
+        select mem_id, mem_salt
+        from tb_salt
+        where mem_id = #{mem_id}
+    </select>
+    
+	<!-- 회원의 키 정보 가져오기 -->
+    <select id="get_mem_height" resultType="com.test.model.MemberVO" parameterType="com.test.model.MemberVO">
+        select height from tb_member where mem_id = #{mem_id}
+    </select>
+    
+    <!-- 개인정보 수정 -->
+	<update id="mem_update" parameterType="com.test.model.MemberVO">
+		update tb_member
+		set mem_pw = #{mem_pw}, mem_addr = #{mem_addr}, mem_nick = #{mem_nick}, mem_email = #{mem_email}, mem_img=#{mem_img}
+		where mem_id = #{mem_id}
+	</update>
+	
+    <!-- salt값 수정 -->
+    <update id="salt_update" parameterType="com.test.model.SaltVO">
+    	update tb_salt
+    	set mem_salt = #{mem_salt}
+    	where mem_id = #{mem_id}
+    </update>
+    
+    <!-- 회원 탈퇴 -->
+    <delete id="mem_unregister">
+    	delete from tb_member
+    	where mem_id = #{mem_id}
+    </delete>
+    
+    <!-- 유저의 최신 정보 가져오기 -->
+    <select id="get_mem_data" parameterType="com.test.model.MemberVO" resultType="com.test.model.MemberVO">
+    	select height, weight, bmi, muscle, fat_per
+    	from tb_member
+    	where mem_id = #{mem_id}
+    </select>
+	
+	<!-- 회원체크 by email -->
+	<select id="get_member_by_email" parameterType="string"
+			resultType="com.test.model.MemberVO">
+		select mem_id, mem_pw, mem_name, mem_phone, mem_addr, mem_email, mem_nick, height, weight, mem_img from tb_member
+		where mem_email = #{mem_email}
+	</select>
+</mapper>

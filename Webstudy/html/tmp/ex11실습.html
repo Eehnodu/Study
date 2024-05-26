@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습</title>
+    <style>
+        table {
+            width: 400px;
+        }
+
+        td {
+            text-align: left;
+            height: 35px;
+            background-color: whitesmoke;
+        }
+
+        th {
+            text-align: left;
+            background-color: gray;
+            height: 50px;
+            font-style: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- (tr>td*2)*4 
+        테이블 한번에 만드는 방법!
+    -->
+
+    <!-- 폼 태그 -->
+    <form action="#">
+        <table>
+
+            <!-- Step1 -->
+            <tr>
+                <th colspan="2">Step1 :
+                    아이디/비번 입력</th>
+            </tr>
+            <tr>
+                <td style="text-align: right;">아이디 : </td>
+                <td><input type="text" name="id"></td>
+            </tr>
+            <tr>
+                <td style="text-align: right;">비밀 번호 : </td>
+                <td><input type="password" name="pwd"></td>
+            </tr>
+            <tr>
+                <td style="text-align: right;">비밀 번호 확인 : </td>
+                <td><input type="password" name="check_pwd"></td>
+            </tr>
+            <!-- Step1 끝 -->
+            <!-- Step2 -->
+            <th colspan="2">Step2 : 개인정보</th>
+
+            </tr>
+            <tr>
+                <td style="text-align: right;">성별 : </td>
+                <td>남<input type="radio" name="gender" value="man">여<input type="radio" name="gender" value="woman">
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right;">혈액형 : </td>
+                <td><select>
+                        <option value="" name="blood">A형</option>
+                        <option value="" name="blood">B형</option>
+                        <option value="" name="blood">AB형</option>
+                        <option value="" name="blood">O형</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td style="text-align: right;">생일 : </td>
+                <td><input type="date" name="birthday"></td>
+            </tr>
+            <!-- Step2 끝 -->
+            <!-- Step3 -->
+            <th colspan="2">Step3 : 선호도</th>
+
+            </tr>
+            <tr>
+                <td style="text-align: right;">취미 : </td>
+                <td>축구<input type="checkbox" value="축구" name="hob">
+                    야구<input type="checkbox" value="야구" name="hob">
+                    농구<input type="checkbox" value="농구" name="hob"></td>
+            </tr>
+            <tr>
+                <td style="text-align: right;">좋아하는 색깔 : </td>
+                <td><input type="color" name="color"></td>
+            </tr>
+            <!-- Step3 끝 -->
+            <!-- Step4 -->
+            <th colspan="2">Step4 : 적고 싶은 말</th>
+
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <textarea cols="56" rows="5" name="memo"></textarea>
+                </td>
+            </tr>
+            <!-- Step4 끝 -->
+            <!-- 제출 / 초기화 -->
+            <tr>
+                <td colspan="2" style="text-align: center; height: 25px;"><input type="button" value="제출"><input
+                        type="reset" value="초기화"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

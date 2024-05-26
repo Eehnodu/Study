@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.mapper.AccExerciseMapper">
+	<!-- 운동 입력 -->
+	<insert id="acc_ex_input"
+		parameterType="com.test.model.AccExerciseVO">
+		insert into tb_accumulated_exercise(mem_id, ex_idx,
+		ex_date, ex_done,
+		ex_reps, ex_time)
+		values (#{mem_id}, #{ex_idx},
+		#{ex_date}, #{ex_done}, #{ex_reps},
+		#{ex_time})
+	</insert>
+
+	<!-- 운동별 칼로리 가져오기 -->
+	<select id="get_acex_data"
+		parameterType="com.test.model.AccExerciseVO"
+		resultType="com.test.model.AccExerciseVO">
+		select ex_date, ex_calories
+		from tb_accumulated_exercise
+		where mem_id = #{mem_id}
+	</select>
+
+	<!-- 선택한 날짜 범위의 운동의 카테고리 가져오기 -->
+	<select id="get_acex_date"
+		parameterType="com.test.model.AccExerciseVO"
+		resultType="com.test.model.AccExerciseVO">
+		SELECT
+		CASE
+		WHEN FIND_IN_SET('상체', e.ex_category) > 0 AND FIND_IN_SET('하체',
+		e.ex_category) > 0 THEN '상체, 하체'
+		WHEN FIND_IN_SET('상체', e.ex_category) > 0 THEN '상체'
+		WHEN FIND_IN_SET('하체', e.ex_category) > 0 THEN '하체'
+		WHEN FIND_IN_SET('유산소', e.ex_category) > 0 THEN '유산소'
+		END AS ex_category,
+		COUNT(*) AS ex_count
+		FROM tb_accumulated_exercise ae
+		JOIN tb_exercise e ON ae.ex_idx = e.ex_idx
+		WHERE ae.mem_id = #{mem_id}
+		AND ae.ex_date BETWEEN #{start_date} AND #{end_date}
+		AND ae.ex_done = 'Y'
+		GROUP BY ex_category
+	</select>
+</mapper>

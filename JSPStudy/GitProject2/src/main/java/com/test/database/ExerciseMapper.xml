@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.mapper.ExerciseMapper">
+
+	<!-- 운동의 idx값 가져오기 -->
+    <select id="get_ex_idx" resultType="com.test.model.ExerciseVO" parameterType="com.test.model.ExerciseVO">
+        select ex_idx from tb_exercise where ex_name = #{ex_name}
+    </select>
+</mapper>

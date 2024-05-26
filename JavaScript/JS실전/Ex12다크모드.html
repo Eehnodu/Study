@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        .normal {
+            background-color: white;
+            color: black;
+        }
+
+        .dark {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="normal">
+    <h1>다크모드용 텍스트</h1>
+    <button id="btn">다크모드변경</button>
+    <script>
+        // 1. jquery로 직접 디자인 조작
+        // $('#btn').on("click", function () {
+        //     console.log($('body').css('background-color'))
+        //     if ($('body').css('background-color') == "rgba(0, 0, 0, 0)") {
+        //         $('body').css({ backgroundColor: "black", color: "white" })
+        //     } else {
+        //         $('body').css({ backgroundColor: "rgba(0, 0, 0, 0)", color: "black" })
+
+        //     }
+        // })
+        // 2. jquery로 class를 변경
+        // css를 변경하는 경우에는 대부분의 스타일 코드가 class에 적용을 받는다.
+        // 직접 스타일을 제어하는 것보다, class값 자체를 변경하는게 효율적이다.
+
+        $('#btn').on("click", function () {
+            $('body').on("click", function () {
+                if ($('body').hasClass('normal')) {
+                    $('body').removeClass('normal')
+                    $('body').addClass('dark')
+                } else {
+                    $('body').removeClass('dark')
+                    $('body').addClass('normal')
+
+                }
+            })
+        })
+
+    </script>
+</body>
+
+</html>

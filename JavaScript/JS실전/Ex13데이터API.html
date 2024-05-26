@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <div id="text"></div>
+    <button id="btn">요청</button>
+    <script>
+        // 버튼을 클릭했을때 api url에 데이터를 요청
+        $('#btn').on('click', function () {
+            // ajax를 통해서 비동기로 요청
+            $.ajax({
+                // 1. 요청을 보낼 서버의 주소
+                // 프로젝트 할때 URL -> 백엔드 컨트롤러와 연관 있는 부분 /join
+                url: "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=791b1d167a669448f666f7a1566ee185&targetDt=20243040",
+                // 2. 요청 방법 명시 (get, post)
+                type: "get",
+                // 3. 데이터를 보내는 공간
+                // data: "넘길 데이터"
+                // 4. 응답데이터를 처리 공간(성공)
+                success: function (res) {
+                    for (let i = 0; i < res.boxOfficeResult.dailyBoxOfficeList.length; i++) {
+                        console.log(res.boxOfficeResult.dailyBoxOfficeList[i].movieNm)
+                        let str = `
+                            <span>랭크 : ${res.boxOfficeResult.dailyBoxOfficeList[i].rank}</span> 
+                            <span>개봉일 : ${res.boxOfficeResult.dailyBoxOfficeList[i].movieNm}</span> 
+                            <span>제목 : ${res.boxOfficeResult.dailyBoxOfficeList[i].openDt}</span><br>
+                        `
+                        // $('#text').append("<span>랭크 : " + res.boxOfficeResult.dailyBoxOfficeList[i].rank + "</span> <span>개봉일 : " + res.boxOfficeResult.dailyBoxOfficeList[i].movieNm + "</span> <span>제목 : " + res.boxOfficeResult.dailyBoxOfficeList[i].openDt + "</span><br>")
+                        // console.log(res.boxOfficeResult.dailyBoxOfficeList[0].movieNm)
+                        // $('#text').html(res.boxOfficeResult.dailyBoxOfficeList[0].movieNm)
+                        $('#text').append(
+                            str
+                        )
+                    }
+                },
+                // 4. 응답데이터를 처리 공간(실패)
+                error: function () {
+                    alert('요청이 실패했습니다.')
+                }
+            })
+        })
+        // 성공했다면, div내용을 넣겠다!
+    </script>
+</body>
+
+</html>

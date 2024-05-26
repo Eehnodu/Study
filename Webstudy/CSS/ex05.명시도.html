@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        ************css의 명시도************
+        :CSS가 중복으로 선언되었을 때, 우선순위를 정하는 척도(점수)
+        - 전체 : 0
+        - 태그 : 1
+        - 클래스 : 10
+        - 아이디 : 100
+        - !important : 1000
+        >> 점수가 더 높을 수록 css 우선순위가 더 높다!!
+        */
+        #food1 {
+            color: orange;
+        }
+
+        p {
+            color: blue;
+        }
+
+        /* 100 */
+        #food2 {
+            /* 명시도를 다 무시하고 가장 중요하다!!! */
+            font-size: 90px !important;
+        }
+
+        /* 100점 + 10점 = 110점 */
+        #food1+.lunch {
+            font-size: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 내가 id값이나 class 값을 부여하면서 태그를 만들고 싶을때는
+        >> 태그명#아이디값 / 태그명.클래스값
+     -->
+    <p id="food1" class="lunch">돼지주물럭</p>
+    <p id="food2" class="lunch">고구마치즈돈까스</p>
+    <p id="food3" class="lunch">파전에 막걸리</p>
+    <p id="food4" class="lunch">국밥</p>
+</body>
+
+</html>

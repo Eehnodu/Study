@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            display : flex;
+            > 레이아웃 배치 전용 기능
+            (1) container
+              - display : flex
+              - flex-direction
+              > 아이템이 배치되는 방향을 결정
+              > row(기본값) / row-reverse / column / column-reverse
+              - flex-wrap
+              > 아이템이 컨테이너에의 한 줄을 넘어설 때 줄 바꿈 설정
+              > nowrap(기본값) / wrap / wrap-reverse
+            (2) item
+              - flex-basis
+              > 아이템의 기본 크기를 설정
+              > row축으로 아이템이 배치될 때는 너비값 설정
+              > column축으로 아이템이 배치될 때는 높이값 설정
+              - flex-grow
+              > 내가 설정한 item의 크기를 제외한 나머지 여백을 기준으로
+                비율을 나눠서 item에 포함시키는 개념
+              > container안쪽에 여백이 사라짐.
+        */
+        #black {
+            /* container역할 담당 */
+            width: 500px;
+            height: 100px;
+            background-color: grey;
+            display: flex;
+            /* flex-direction: row-reverse; */
+        }
+
+        /* 
+            item의 높이 값은 기본적으로 container의 높이를 따른다.
+        */
+        #red {
+            background-color: red;
+            flex-basis: 33%;
+        }
+
+        #green {
+            width: 100px;
+            background-color: green;
+            flex-grow: 2;
+        }
+
+        #blue {
+            width: 100px;
+            background-color: blue;
+            flex-grow: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="black">
+        <div id="red"></div>
+        <div id="green"></div>
+        <div id="blue"></div>
+    </div>
+</body>
+
+</html>

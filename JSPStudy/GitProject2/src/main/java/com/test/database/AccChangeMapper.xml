@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+	<!DOCTYPE mapper
+	  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.test.mapper.AccChangeMapper">
+		<!-- 몸무게를 기입하면 해당날짜의 변화량 기록 -->
+	    <insert id="acc_ch_input" parameterType="com.test.model.AccChangeVO">
+	    	insert into tb_accumulated_change(mem_id, height, weight, ch_date, ex_calories)
+	        values (#{mem_id}, #{height}, #{weight}, #{ch_date}, #{ex_calories})
+	    </insert>
+		
+		<!-- mem_id와 시작일부터 종료일까지의 신체 변화 데이터 가져오기 -->
+	    <select id="get_acch_date" parameterType="com.test.model.AccChangeVO" resultType="com.test.model.AccChangeVO">
+	        SELECT *
+	        FROM tb_accumulated_change
+	        WHERE mem_id = #{mem_id} AND ch_date BETWEEN #{start_date} AND #{end_date}
+	        ORDER BY ch_date
+	    </select>
+	    
+	    <!-- 오늘 날짜의 해당 월의 누적 출석률 구하기 -->
+	    <select id="get_count_date" parameterType="com.test.model.AccChangeVO" resultType="com.test.model.AccChangeVO">
+	    	select ch_date
+	    	from tb_accumulated_change
+	    	WHERE mem_id = #{mem_id} AND ch_date BETWEEN #{start_date} AND #{end_date}
+	    	ORDER BY ch_date
+	    </select>
+	</mapper>

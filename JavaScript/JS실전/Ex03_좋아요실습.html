@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="txt">0</p>
+    <button id="plu">+1증가</button>
+    <button id="min">-1감소</button>
+    <script>
+        let num = Number(document.getElementById("txt").innerHTML)
+
+        function plus() {
+            num += 1
+            document.getElementById("txt").innerHTML = num
+        }
+
+        function minus() {
+            if (num > 0) {
+                num -= 1
+                document.getElementById("txt").innerHTML = num
+            }
+
+        }
+
+        document.getElementById("plu").addEventListener("click", plus)
+        document.getElementById("min").addEventListener("click", minus)
+
+    </script>
+</body>
+
+</html>

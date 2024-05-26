@@ -1,0 +1,99 @@
+.main-panel .content-wrapper .card-stat {
+  background-image: url("../images/banner/flower.jpg");
+  background-size: cover;
+
+
+  
+}
+
+.stretch-card>.card{
+  margin-top: 100px;
+  margin-bottom: 190px;
+
+}
+
+
+
+.flower-form{
+  margin-top: 10px !important;
+}
+
+
+.flower-submit{
+  margin-top: 20px;
+}
+
+.login-form-flower label{
+  margin: 0.5rem;
+}
+
+.login-form-flower .form-control{
+  margin-top: 0 !important;
+}
+
+.flower-row{
+
+  padding-top: 7%;
+}
+
+
+.text-color {
+  color: #333;
+
+}
+
+.text-color .font-weight-bold a {
+  color: #ff0854;
+}
+
+
+
+
+.flower-title {
+  flex: 1;
+}
+
+
+.flot-bar-wrapper h6 {
+  color: #ff0854;
+}
+
+.flot-bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.flot-chart {
+  align-self: flex-end;
+}
+
+.flower-form {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 10px;
+}
+
+
+
+
+.flot-bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+@media (max-width: 992px) {
+.col-3{
+  width: 100% !important;
+}
+}
+
+
+
+@media (max-width: 1503px) {
+  .col-3{
+    width: 80% ;
+  }
+  }

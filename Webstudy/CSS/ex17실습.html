@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap {
+            width: 500px;
+            height: 500px;
+            background-color: grey;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #header {
+            background-color: #EA4335;
+            width: 100%;
+            height: 10%;
+        }
+
+        #nav {
+            background-color: #FF5E00;
+            width: 100%;
+            height: 10%;
+        }
+
+        #wrap2 {
+            background-color: aquamarine;
+            width: 100%;
+            height: 60%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        #side {
+            background-color: #4285F4;
+            width: 30%;
+        }
+
+        #wrap3 {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #section1 {
+            background-color: #34A853;
+            flex-grow: 1;
+            height: 30%;
+        }
+
+        #section2 {
+            background-color: #FBBC05;
+            flex-grow: 1;
+            height: 30%;
+        }
+
+        #footer {
+            background-color: #8A8D92;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header"></div>
+        <div id="nav"></div>
+        <div id="wrap2">
+            <div id="side"></div>
+            <div id="wrap3">
+                <div id="section1"></div>
+                <div id="section2"></div>
+            </div>
+        </div>
+        <div id="footer"></div>
+    </div>
+</body>
+
+</html>

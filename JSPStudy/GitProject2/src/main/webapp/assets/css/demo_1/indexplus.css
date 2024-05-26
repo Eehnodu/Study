@@ -1,0 +1,16 @@
+@charset "UTF-8";
+@charset "UTF-8";
+.indexDC{
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: center;
+}
+.chaname {
+    font-weight: 700;
+    font-size: 1.0vw;
+}
+.indexfont{
+	font-size: 14px;
+    line-height: 1.5;
+    font-weight: 600;
+}

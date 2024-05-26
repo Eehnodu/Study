@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap {
+            width: 500px;
+            height: 500px;
+            background-color: grey;
+        }
+
+        #header {
+            width: 100%;
+            height: 15%;
+            background-color: cyan;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        #section1 {
+            width: 15%;
+            height: 70%;
+            background-color: deepskyblue;
+            float: left;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+            word-wrap: break-word;
+        }
+
+        #main {
+            width: 70%;
+            height: 70%;
+            background-color: darkcyan;
+            float: left;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+
+        }
+
+        #section2 {
+            width: 15%;
+            height: 70%;
+            background-color: dodgerblue;
+            float: right;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+            word-wrap: break-word;
+        }
+
+        /*
+            clear
+            > float 속성 적용을 멈추고 싶을 때 사용
+            1) Left
+            2) right
+            3) both
+        */
+
+        #footer {
+            width: 100%;
+            height: 15%;
+            background-color: lightskyblue;
+            clear: both;
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header">header</div>
+        <div id="section1">section1</div>
+        <div id="main">main</div>
+        <div id="section2">section2</div>
+        <div id="footer">footer</div>
+    </div>
+</body>
+
+</html>

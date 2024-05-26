@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.db.ArtistMapper">
+
+	<!-- type : 내가 표현할 java 자료형
+		id : xml 파일 안에서 사용될 이름
+		===================================
+		column : 내가 조회해 온 column 이름
+		property : java에서 표현할 vo안에 있는 field 이름
+	 -->
+
+	<resultMap type="com.smhrd.model.ArtistVO" id="myResult">
+		<result column="artist" property="artist"/>
+		<result column="keyword_cnt" property="keywordCnt"/>
+	</resultMap>
+
+	<!-- 아티스트 정보 가져오기 -->
+	<select id="getdata" resultMap="myResult">
+		SELECT DISTINCT(artist), SUM(keyword_cnt) AS keyword_cnt
+		FROM ARTIST
+		GROUP BY artist
+		ORDER BY keyword_cnt
+		DESC LIMIT 5;
+	</select>
+
+
+</mapper>

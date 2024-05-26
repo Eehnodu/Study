@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <h1 id="txt">변경할 데이터</h1>
+    <script>
+        $('#txt').on("mouseover", function () {
+            $('#txt').css('color', 'blue');
+        })
+        $('#txt').on("mouseout", function () {
+            $('#txt').css('color', 'black');
+        })
+        $('#txt').on("click", function () {
+            $('#txt').css({ color: 'white', backgroundColor: 'black' })
+        })
+
+    </script>
+</body>
+
+</html>

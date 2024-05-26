@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.mapper.StdMapper">
+
+	<select id="get_std_data" resultType="com.test.model.StdDataVO" parameterType="com.test.model.StdDataVO">
+		select height, weight, bmi, muscle, fat_per
+		from tb_standard_data
+		where gender = #{gender} and age >= #{age}
+		order by age ASC
+		limit 1;
+	</select>
+</mapper>
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let ran_num = Math.floor(Math.random() * 100) + 1
+        while (true) {
+            let num = Number(prompt("숫자를 입력해주세요"))
+            if (num > ran_num) {
+                alert("입력한 숫자보다 작은 수 입니다.")
+            } else if (num < ran_num) {
+                alert("입력한 숫자보다 큰 수 입니다.")
+            } else {
+                alert("정답입니다. 축하합니다")
+                break
+            }
+        }
+    </script>
+</body>
+
+</html>

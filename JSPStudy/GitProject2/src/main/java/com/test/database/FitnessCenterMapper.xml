@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.mapper.FitnessCenterMapper">
+
+
+	<select id="fit_center"
+		parameterType="com.test.model.FitnessCenterVO"
+		resultType="com.test.model.FitnessCenterVO">
+		SELECT tb_fitness_center.*
+		FROM tb_trainer
+		INNER JOIN tb_fitness_center ON tb_trainer.center_idx =
+		tb_fitness_center.center_idx
+		WHERE tb_trainer.trn_name = #{trn_name}
+	</select>
+</mapper>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- PurchaseMapper.xml -->
+<mapper namespace="com.test.mapper.RsvCommitMapper">
+	<insert id="RsvCommit" parameterType="com.test.model.ReserveVO">
+        INSERT INTO tb_reservation (pt_idx, mem_id, created_at, res_status) VALUES (#{pt_idx}, #{mem_id}, #{created_at}, #{res_status})
+    </insert>
+</mapper>

@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+.content-wrapper .card-calender {
+    background-image: url("../../images/banner/flower2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 4px; }
+    .content-wrapper .card-calender h1 {
+      font-size: 22px; }
+    .content-wrapper .card-calender h5 {
+      font-weight: 400;
+      padding-bottom: 6px; }
+    .content-wrapper .card-calender h3 {
+      font-size: 40px; }
+    .content-wrapper .card-calender ul li {
+      list-style: none;
+      padding: 5px 23px 20px 23px;
+      margin: 0 3px; }
+      .content-wrapper .card-calender ul li.active {
+        border-radius: 3px;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(#ffffff1f));
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), #ffffff1f); }
+  

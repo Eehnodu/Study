@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 1) 어떤 사용자 정의 태그를 쓸건지 dtd 잡아주기 dtd란? : document type definition -->
+<!-- 2) configuration : mybatis 설정값들을 작성하는 공간 -->
+<configuration>
+	<!-- typeAliases : 내가 사용할 객체들의 별칭을 지정할 수 있는 공간 -->
+	<typeAliases>
+		<typeAlias type="com.smhrd.model.MemberVO" alias="mvo"/>
+	</typeAliases>
+	<!-- 3) environments : DB들을 기술하는 공간 -->
+	<environments default="development">
+		<!-- 4) environment : DB 1개를 기술하는 공간 -->
+		<environment id="development">
+			<!-- 5) transactionManger : commit과 rollback 주체 대상 결정 type = "JDBC" >> 
+				내가 commit, rollback 결정 type = "MANAGED" >> 외부 컨테이너에게 commit, rollback 결정 -->
+			<transactionManager type="JDBC" />
+			<!-- 6) dataSource : DB 환경을 설정하는 공간 type = "POOLED" >> DataBaseConnectionPool 
+				기술을 쓰겠다. >> Connection 객체를 미리 생성해놓고(한정적), 요청이 들어올때마다 빌려쓰는 방식 type = "UNPOOLED" 
+				>> 요청이 들어올 때마다 Connection 객체 생성 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.cj.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://localhost/bigdata" />
+				<property name="username" value="root" />
+				<property name="password" value="12345" />
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- 7) mappers : mapper 파일들을 기술하는 공간 -->
+	<mappers>
+		<!-- 8) mapper : sql구문을 가지고 있는 파일 mapper 파일이 추가될때마다, 해당하는 공간을 수정 -->
+		<mapper resource="com/smhrd/database/MemberMapper.xml" />
+	</mappers>
+</configuration>

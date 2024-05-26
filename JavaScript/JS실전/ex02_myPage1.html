@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ex02_myJs1.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        #red {
+            background-color: red;
+        }
+
+        #green {
+            background-color: green;
+        }
+
+        #blue {
+            background-color: blue;
+        }
+
+        #gray {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <span id="change">
+        <div id="red"></div>
+        <div id="green"></div>
+        <div id="blue"></div>
+        <div id="gray"></div>
+    </span>
+    <button id="margin">Margin 이동!</button><button id="border">Border-radius 효과주기!</button>
+    <script>
+        document.getElementById('margin').addEventListener('click', margin)
+        document.getElementById('border').addEventListener('click', border)
+    </script>
+</body>
+
+</html>

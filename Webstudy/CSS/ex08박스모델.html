@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        /* 
+            margin : 바깥여백 지정 가능
+            - margin : 50px
+            >> 위, 아래, 왼쪽, 오른쪽 전부 여백 지정
+            - margin-top / margin-bottom ...
+            >> 정확하게 한 위치에만 지정하고 싶을 때 사용
+            - margin : auto;
+            >> 가운데 정렬
+        */
+        /* 
+            마진상쇄현상!
+            >> 2개 이상의 block속성의 요소의 마진값이 겹쳤을 때
+               더 큰쪽으로 작은 마진값이 상쇄되는 현상
+        */
+        #red {
+            background-color: red;
+            margin-bottom: 200px;
+        }
+
+        #blue {
+            background-color: blue;
+            margin-top: 100px;
+            margin-left: 100px;
+        }
+
+        #green {
+            background-color: green;
+            margin-left: 200px;
+        }
+
+        #gray {
+            background-color: gray;
+            margin-left: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        박스모델
+        : 모든 태그는 사각형으로 구성이 되어있다.
+        : 부피감을 결정할 때 사용함.
+        >> 웹 페이지 상의 레이웃을
+           설계할 때 중요한 개념
+
+        - width : 콘텐츠 영역을 기준으로 너비 지정
+        - width : 콘텐츠 영역을 기준으로 높이 지정
+        - border : 테두리(경계선)
+        - padding : 테두리와 내용을 기준으로 안쪽 여백
+        - margin : 테두리를 기준으로 바깥족 여백
+
+     -->
+    <div id="red"></div>
+    <div id="blue"></div>
+    <div id="green"></div>
+    <div id="gray"></div>
+</body>
+
+</html>
